@@ -1,2 +1,2 @@
 # CodingTest
-code
+solve
