@@ -13,7 +13,7 @@ public:
 
     bool isRepeatingPlaylist() {
         unordered_set<string> slist;
-        unordered_set<string>::iterator it;
+        // unordered_set<string>::iterator it;
         Song* tmp = this;
         while (tmp != NULL) {
             bool is_in = slist.find(tmp->name) != slist.end();
