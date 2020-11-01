@@ -17,8 +17,8 @@ def solution(dartResult):
                 scores[idx-2] = int(scores[idx-2])*2
         elif dartResult[i] == "#":
             scores[idx-1] = int(scores[idx-1])*-1
-        else: # "0"~"10"일 때 처리
-           scores[idx] += dartResult[i] # 문자열로 "10" 처리
+        else: # case from "0" to "10"
+           scores[idx] += dartResult[i] # for handling "10" as a string
     for data in scores:
         answer += int(data)
     return answer
