@@ -21,7 +21,7 @@ int main() {
     int com, a, b;
     cin >> n >> m;
 
-    for (int i=0; i<n; i++) djset.emplace_back(i+1); // make each group
+    for (int i=1; i<=n; i++) djset.emplace_back(i); // make each group
 
     for (int i=0; i<m; i++) {
         cin >> com >> a >> b;
