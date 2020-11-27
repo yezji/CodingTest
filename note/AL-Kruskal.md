@@ -9,6 +9,7 @@
     2. 간선을 가중치 순으로 정렬
     3. 사이클 체크 후 사이클 생긴다면 간선 잇지 않음
 
+![Kruskal graph](img/kruskal_graph.png)
 
 ``` cpp
 #include <iostream>
@@ -84,7 +85,7 @@ int main() {
 }
 ```
 
-
+---
 ###### input
 ```
 8 10
