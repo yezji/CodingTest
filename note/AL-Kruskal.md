@@ -1,5 +1,5 @@
 # Kruskal's Algorithm
-- 최소신장트리 (MST) 구하는 대표 알고리즘
+- 최소신장트리(MST)를 구하는 대표 알고리즘
     - 최소신장트리 : 그래프의 모든 노드를 포함하는 사이클 없는 그래프 + 간선들의 가중치 합이 최소인 경로
 - Disjoint set 자료구조 사용
     - 1차원 벡터로 구현
@@ -31,8 +31,8 @@ struct edge {
 };
 
 int n, m, answer=0;
-vector<edge> edges(1);
-vector<int> djset(1); // disjoint set: 1~N 정점의 부모노드 인덱스를 저장
+vector<edge> edges;
+vector<int> djset(1); // disjoint set: store vertex(1~N)'s root idx
 
 edge makeEdge(int f, int t, int w) {
   edge e;
@@ -63,7 +63,7 @@ int main() {
   cin >> n >> m;
   
   int f, t, w;
-  for (int i=1; i<=m; i++) {
+  for (int i=0; i<m; i++) {
    cin >> f >> t >> w;
    edges.emplace_back(makeEdge(f, t, w));
   }
@@ -72,7 +72,7 @@ int main() {
   
   for (int i=1; i<=n; i++) djset.emplace_back(i); // init djset
   
-  for (int i=1; i<=m; i++) {
+  for (int i=0; i<m; i++) {
    if (find(edges[i].from) != find(edges[i].to)) { // has not cycle
      answer += edges[i].weight;
      unite(edges[i].from, edges[i].to);
